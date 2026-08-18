@@ -1,0 +1,11 @@
+.env
+.env.remote
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+data/vector_db/
+*.db
+*.egg-info/
