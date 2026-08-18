@@ -26,6 +26,8 @@ CALLOUT = "F7F9FC"
 GOLD = "A87127"
 CODE_BG = "F4F6F8"
 BORDER = "D7DEE7"
+# Use a real macOS Simplified Chinese font for render QA and Word previews.
+# The previous fallback font name rendered Chinese as empty boxes in LibreOffice.
 CJK_FONT = ".CJK Symbols Fallback SC"
 
 
@@ -294,7 +296,7 @@ def add_cover(doc: Document) -> None:
         ("项目定位", "对公信贷尽调与合规辅助分析的多智能体作品集项目"),
         ("技术栈", "LangGraph · FastAPI · MCP JSON-RPC · Embedding RAG · Skills"),
         ("适用读者", "项目作者、面试官、同学、首次运行和验收人员"),
-        ("版本", "v0.1.0 · 2026 年 8 月"),
+        ("版本", "v0.2.0 · 2026 年 8 月"),
     ]
     for row, (label, value) in zip(metadata.rows, rows):
         set_cell_shading(row.cells[0], LIGHT_BLUE)
@@ -513,7 +515,9 @@ def add_appendix(doc: Document) -> None:
         ("6. 复核", "材料齐备后由有权人员完成人工复核和最终判断。"),
     ]
     for label, detail in steps:
-        p = doc.add_paragraph(style="List Number")
+        # The label already carries the explicit step number. Avoid Word's
+        # continuing List Number counter, which otherwise renders as 36.1.
+        p = doc.add_paragraph()
         r = p.add_run(f"{label}：")
         set_run_font(r, bold=True, color=NAVY)
         r = p.add_run(detail)
