@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101a2c" />
+    <meta name="description" content="金融多智能体决策辅助工作台" />
+    <title>衡鉴 · 金融多智能体工作台</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <div class="brand-name">衡鉴</div>
+            <div class="brand-caption">FINANCE AGENT OS</div>
+          </div>
+        </div>
+
+        <div class="workspace-selector">
+          <div class="workspace-icon">F</div>
+          <div class="workspace-copy">
+            <span>当前工作区</span>
+            <strong>信贷分析实验室</strong>
+          </div>
+          <span class="chevron">⌄</span>
+        </div>
+
+        <div class="nav-label">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="主导航">
+          <a class="nav-item active" href="#workspace"><span class="nav-icon">⌂</span>分析工作台</a>
+          <a class="nav-item" href="#run-history"><span class="nav-icon">↗</span>运行记录 <span class="nav-count">03</span></a>
+          <a class="nav-item" href="#knowledge"><span class="nav-icon">▤</span>知识库</a>
+          <a class="nav-item" href="#architecture"><span class="nav-icon">◈</span>Agent 架构</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="model-card">
+          <div class="model-card-top"><span class="pulse-dot"></span><span id="model-status">运行时检查中</span></div>
+            <strong id="model-label">正在读取模型…</strong>
+            <span class="model-meta" id="model-meta">检查本地运行时</span>
+          </div>
+          <div class="profile-row"><div class="avatar">C</div><div><strong>作品演示账号</strong><span>本地安全模式</span></div><span class="more">•••</span></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong>Analysis desk</strong></div>
+          <div class="topbar-actions"><span class="secure-badge"><span class="lock">⌁</span> 本地数据隔离</span><button class="icon-button" aria-label="通知">♢</button><button class="avatar avatar-small">C</button></div>
+        </header>
+
+        <div class="page-content">
+          <section class="hero" id="workspace">
+            <div class="hero-copy">
+              <div class="eyebrow"><span class="eyebrow-line"></span>金融决策辅助系统 <span class="status-pill">LIVE DEMO</span></div>
+              <h1>把一条问题，拆成一条<br /><em>可审计的分析链。</em></h1>
+              <p>衡鉴将客户信息、知识库依据与风险分析拆分给专职 Agent，再由报告 Agent 汇总。每一步都有迹可循，最终结论只做辅助，不替代专业决策。</p>
+              <div class="hero-actions"><a href="#architecture" class="button button-primary">查看系统架构 <span>↓</span></a><a href="#showcase" class="text-link">面试展示指南 <span>↗</span></a></div>
+            </div>
+            <div class="hero-visual" aria-label="多智能体工作流示意图">
+              <div class="orb orb-one"></div><div class="orb orb-two"></div>
+              <div class="network-card">
+                <div class="network-header"><span>RUN GRAPH / 05 NODES</span><span class="network-live"><i></i> READY</span></div>
+                <div class="network-flow">
+                  <div class="network-node node-main"><span class="node-glyph">✦</span><div><b>Supervisor</b><small>任务分流</small></div></div>
+                  <div class="flow-line"><i></i><i></i><i></i></div>
+                  <div class="network-grid"><div class="network-node"><span class="node-glyph">◌</span><div><b>Collector</b><small>资料采集</small></div></div><div class="network-node"><span class="node-glyph">△</span><div><b>Risk</b><small>风险分析</small></div></div><div class="network-node"><span class="node-glyph">§</span><div><b>Compliance</b><small>依据审查</small></div></div><div class="network-node"><span class="node-glyph">↗</span><div><b>Writer</b><small>报告汇总</small></div></div></div>
+                </div>
+                <div class="network-footer"><span>LangGraph orchestration</span><span>traceable by design</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="metric-strip" aria-label="系统概览">
+            <div class="metric-item"><span class="metric-icon amber">✦</span><div><strong>05</strong><span>协作节点</span></div></div>
+            <div class="metric-item"><span class="metric-icon blue">◎</span><div><strong>03</strong><span>金融工具</span></div></div>
+            <div class="metric-item"><span class="metric-icon green">⌁</span><div><strong>100%</strong><span>人工可复核</span></div></div>
+            <div class="metric-item metric-note"><span class="metric-spark">↗</span><div><strong>Local-first</strong><span>敏感数据不出本地</span></div></div>
+          </section>
+
+          <section class="workspace-grid">
+            <div class="interaction-column">
+              <div class="section-heading"><div><span class="section-kicker">01 / ASK THE SYSTEM</span><h2>开始一次分析</h2></div><span class="keyboard-hint">⌘ ↵</span></div>
+              <div class="composer-card">
+                <div class="composer-top"><span class="composer-label"><span class="green-dot"></span>系统已就绪</span><span class="composer-context">金融场景 · 辅助分析</span></div>
+                <textarea id="query-input" aria-label="输入你的金融问题" placeholder="描述一个需要拆解的金融问题…" rows="4"></textarea>
+                <div class="composer-bottom"><span class="disclaimer-mini">⌁ 结果不构成授信、合规或投资决定</span><button id="submit-button" class="button button-primary submit-button"><span>运行分析</span><span class="button-arrow">↗</span></button></div>
+              </div>
+              <div class="examples"><span class="examples-label">试试这些场景</span><div class="example-row"><button data-query="请对示例科技有限公司做一份授信尽调，列出主要风险和缺失材料。">企业授信尽调 <span>↗</span></button><button data-query="什么是反洗钱？请基于知识库给出说明。">制度知识问答 <span>↗</span></button><button data-query="请推荐一只股票给我。">安全边界测试 <span>↗</span></button></div></div>
+
+              <div class="result-card" id="result-card">
+                <div class="result-empty" id="result-empty"><div class="empty-icon">✦</div><h3>你的分析结果会出现在这里</h3><p>选择一个场景，观察问题如何在五个 Agent 之间流转。</p></div>
+                <div class="result-content hidden" id="result-content">
+                  <div class="result-header"><div><span class="section-kicker">02 / SYNTHESIS</span><h2>分析结论</h2></div><span class="result-type" id="result-type">GENERAL</span></div>
+                  <div class="result-context-line"><span id="prompt-version">Prompt --</span><span id="skills-label">Skill --</span></div>
+                  <div class="data-status-card hidden" id="data-status-card">
+                    <div class="data-status-header"><div><span class="data-status-kicker">DATA GATE</span><strong id="data-status-label">资料待补充</strong></div><span id="data-status-source">local_demo_crm</span></div>
+                    <p id="data-status-message"></p>
+                    <div class="data-status-subheading">缺失材料清单</div>
+                    <ul id="missing-materials-list"></ul>
+                    <div class="data-status-subheading">下一步处理</div>
+                    <ol id="data-status-actions"></ol>
+                  </div>
+                  <div class="answer-box"><div class="answer-mark">“</div><div id="answer-text"></div></div>
+                  <div class="result-meta"><div><span>置信度</span><strong id="confidence-value">0%</strong></div><div class="confidence-track"><i id="confidence-bar"></i></div><span class="review-flag" id="review-flag">待人工复核</span></div>
+                  <div class="sources-block" id="sources-block"><div class="subheading"><span>检索依据</span><span id="source-count">0 sources</span></div><div id="sources-list"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="execution-column" id="run-history">
+              <div class="section-heading"><div><span class="section-kicker">03 / OBSERVABILITY</span><h2>运行视图</h2></div><span class="live-indicator"><i></i> LIVE</span></div>
+              <div class="trace-card"><div class="trace-header"><div><strong id="trace-title">等待下一次运行</strong><span id="trace-subtitle">每个节点都会留下可读轨迹</span></div><span class="trace-time" id="trace-time">--:--</span></div><div class="timeline" id="timeline"><div class="timeline-empty">运行分析后，这里会显示 Agent 协作过程。</div></div><div class="trace-footer"><span><i class="legend-dot done"></i> 已完成</span><span><i class="legend-dot pending"></i> 待执行</span><span class="trace-powered">LangGraph</span></div></div>
+              <div class="guardrail-card"><div class="guardrail-icon">⌁</div><div><strong>安全护栏已开启</strong><p>系统不会替代审批人员，也不会提供个股买卖建议。高风险问题自动标记人工复核。</p></div></div>
+            </aside>
+          </section>
+
+          <section class="lower-section" id="knowledge">
+            <div class="section-heading"><div><span class="section-kicker">04 / SYSTEM ASSETS</span><h2>作品能力地图</h2></div><span class="section-caption">从 Demo 到可部署产品的最小闭环</span></div>
+            <div class="capability-grid">
+              <article class="capability-card"><div class="capability-index">A1</div><div class="capability-icon">▤</div><h3>可引用知识库</h3><p>本地 txt / md / PDF 文档切片检索，回答时返回来源，不把模型记忆伪装成制度依据。</p><span class="capability-tag">RAG READY</span></article>
+              <article class="capability-card"><div class="capability-index">A2</div><div class="capability-icon">⌘</div><h3>可替换模型层</h3><p>默认使用轻量级本地 Ollama 模型，也支持 Demo 与 DeepSeek 等 OpenAI-compatible API。</p><span class="capability-tag">MODEL AGNOSTIC</span></article>
+              <article class="capability-card"><div class="capability-index">A3</div><div class="capability-icon">◈</div><h3>可审计工作流</h3><p>LangGraph 共享状态串联五个 Agent，前端把 trace、置信度和人工复核状态直接呈现。</p><span class="capability-tag">TRACEABLE</span></article>
+            </div>
+          </section>
+
+          <section class="architecture-section" id="architecture">
+            <div class="section-heading"><div><span class="section-kicker">05 / UNDER THE HOOD</span><h2>一条清晰的系统链路</h2></div><span class="section-caption">适合面试时用 30 秒讲清楚</span></div>
+            <div class="architecture-flow"><div class="arch-step"><span>01</span><strong>输入问题</strong><small>自然语言入口</small></div><div class="arch-connector"></div><div class="arch-step"><span>02</span><strong>Supervisor</strong><small>任务分流</small></div><div class="arch-connector"></div><div class="arch-step"><span>03</span><strong>Specialists</strong><small>采集 / 风险 / 合规</small></div><div class="arch-connector"></div><div class="arch-step featured"><span>04</span><strong>Report Writer</strong><small>汇总 + 护栏</small></div></div>
+          </section>
+
+          <section class="showcase-section" id="showcase">
+            <div><span class="section-kicker">PORTFOLIO NOTE</span><h2>面试时，展示的不只是一个聊天框。</h2><p>这个作品的核心亮点是：你能解释为什么拆 Agent、状态如何流转、证据如何被引用，以及在金融高风险场景里如何把“能回答”约束成“可复核”。</p></div>
+            <div class="showcase-points"><span><b>01</b> 业务拆解</span><span><b>02</b> 编排实现</span><span><b>03</b> 安全边界</span><span><b>04</b> 交付意识</span></div>
+          </section>
+
+          <footer class="footer"><span>衡鉴 · Financial Agent OS</span><span>Built with LangGraph + FastAPI</span><span>Demo data only · Not financial advice</span></footer>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
